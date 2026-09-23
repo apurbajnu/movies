@@ -73,8 +73,11 @@ $yearParam = isset($_GET['year']) ? $_GET['year'] : null;
 // Validate if the selected collection exists in our JSON
 $currentCol = ($colId !== null && isset($collections[$colId])) ? $collections[$colId] : null;
 
-// Determine if this collection uses year folders (defaults to true if not specified)
-$hasYears = ($currentCol && isset($currentCol['hasYears'])) ? (bool)$currentCol['hasYears'] : true;
+// Determine if this collection uses year folders safely (handles "false" strings, true, 1, 0, etc.)
+$hasYears = true; // Default
+if ($currentCol && isset($currentCol['hasYears'])) {
+    $hasYears = filter_var($currentCol['hasYears'], FILTER_VALIDATE_BOOLEAN);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -124,7 +127,10 @@ if ($colId === null || !$currentCol) {
         if (substr($href, -1) === '/') {
             $folderName = trim(basename(urldecode($href)));
             
-            if ($folderName === '' || $folderName === 'Parent Directory' || strpos($href, 'h5ai') !== false || strpos($href, '?') === 0 || trim($folderName) === trim(basename(urldecode($basePath)))) {
+            // Clean up the base path to strictly identify the parent directory name
+            $parentDirName = trim(basename(rtrim(urldecode($basePath), '/')));
+            
+            if ($folderName === '' || $folderName === 'Parent Directory' || strpos($href, 'h5ai') !== false || strpos($href, '?') === 0 || $folderName === $parentDirName) {
                 continue;
             }
             
@@ -165,6 +171,7 @@ if ($colId === null || !$currentCol) {
         
         if (substr($href, -1) === '/') {
             $folderName = trim(basename(urldecode($href)));
+            $parentDirName = trim(basename(rtrim(urldecode($basePath), '/')));
             
             // Skip system folders, the parent folder name, or the year folder name
             if (
@@ -173,7 +180,7 @@ if ($colId === null || !$currentCol) {
                 strpos($href, 'h5ai') !== false || 
                 strpos($href, '?') === 0 || 
                 ($hasYears && $folderName === $yearParam) ||
-                (!$hasYears && trim($folderName) === trim(basename(urldecode($basePath))))
+                (!$hasYears && $folderName === $parentDirName)
             ) {
                 continue;
             }

@@ -79,3 +79,24 @@ body {
     margin-top: 8px;
     line-height: 1.3;
 }
+
+.movie-poster {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #ddd;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    
+    /* 1. Add this transition to make the animation smooth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    position: relative;
+    z-index: 1;
+}
+
+/* 2. Add this new hover state right below it */
+.movie-poster:hover {
+    transform: scale(2); /* Zooms the image in by 10% */
+    box-shadow: 0 12px 24px rgba(0,0,0,0.4); /* Makes the shadow deeper so it pops out */
+    z-index: 10; /* Ensures the zoomed image overlaps the ones next to it */
+}
