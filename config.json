@@ -1,0 +1,23 @@
+[
+  {
+    "host": "http://172.16.50.14",
+    "basePath": "/DHAKA-FLIX-14/Hindi%20Movies/",
+    "collectionTitle": "Hindi Movies Collection"
+  },
+  {
+    "host": "http://172.16.50.7",
+    "basePath": "/DHAKA-FLIX-7/English%20Movies/",
+    "collectionTitle": "English Movies Collection"
+  },
+  {
+    "host": "http://172.16.50.7",
+    "basePath": "/DHAKA-FLIX-7/Foreign%20Language%20Movies/",
+    "collectionTitle": "Foreign Language Movies Collection"
+  },
+  {
+    "host": "http://172.16.50.9",
+    "basePath": "/DHAKA-FLIX-14/Documentary/",
+    "collectionTitle": "Documentary",
+    "hasYears": false
+  }
+]
