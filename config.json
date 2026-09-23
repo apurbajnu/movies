@@ -3,19 +3,25 @@
     "host": "http://172.16.50.14",
     "basePath": "/DHAKA-FLIX-14/Hindi%20Movies/",
     "collectionTitle": "Hindi Movies Collection",
-    "hasYears": true
+    "hasYears": true,
+    "movieApi": true,
+    "omdbApiKey": "e865de05"
   },
   {
     "host": "http://172.16.50.7",
     "basePath": "/DHAKA-FLIX-7/English%20Movies/",
     "collectionTitle": "English Movies Collection",
-    "hasYears": true
+    "hasYears": true,
+    "movieApi": true,
+    "omdbApiKey": "e865de05"
   },
   {
     "host": "http://172.16.50.7",
     "basePath": "/DHAKA-FLIX-7/Foreign%20Language%20Movies/",
     "collectionTitle": "Foreign Language Movies Collection",
-    "hasYears": true
+    "hasYears": true,
+    "movieApi": true,
+    "omdbApiKey": "e865de05"
   },
   {
     "host": "http://172.16.50.9",
@@ -27,19 +33,25 @@
     "host": "http://172.16.50.14",
     "basePath": "/DHAKA-FLIX-14/IMDb%20Top-250%20Movies/",
     "collectionTitle": "IMDb Top-250 Movies",
-    "hasYears": false
+    "hasYears": false,
+    "movieApi": true,
+    "omdbApiKey": "e865de05"
   },
   {
     "host": "http://172.16.50.14",
     "basePath": "/DHAKA-FLIX-14/SOUTH%20INDIAN%20MOVIES/Hindi%20Dubbed/",
     "collectionTitle": "South Indian Movies",
-    "hasYears": true
+    "hasYears": true,
+    "movieApi": true,
+    "omdbApiKey": "e865de05"
   },
   {
     "host": "http://172.16.50.12",
     "basePath": "/DHAKA-FLIX-12/TV-WEB-Series/",
     "collectionTitle": "Web Series",
-    "hasYears": true
+    "hasYears": true,
+    "movieApi": true,
+    "omdbApiKey": "e865de05"
   },
   {
     "host": "http://172.16.50.9",
